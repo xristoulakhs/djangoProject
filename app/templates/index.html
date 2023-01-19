@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+    <title>3180207 site</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+    <body style="background-color: gray;">
+        {% if messages %}
+            {% for message in messages%}
+                <div class="alert" role="alert">
+                    {{message}}
+<!--                  <strong>Invalid values!</strong> You have entered an invalid username or password.-->
+                  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <form method="POST" action="{% url 'index' %}" >
+            {% csrf_token %}
+            <label for="username"> Username: </label><br>
+            <input type="text" id="username" name="username">
+            <label for="password"> Password: </label><br>
+            <input type="password" id="password" name="password">
+<!--            {( form.as_p )}-->
+             <button onclick="onClick()">Log In</button>
+        </form>
+        <script src="{% static 'index.js' %}"></script>
+    </body>
+</html> 
