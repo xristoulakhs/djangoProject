@@ -81,8 +81,8 @@ WSGI_APPLICATION = 'djangoProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'GDPR',
-        'USER': 'asfaleia',
+        'NAME': 'database_name',
+        'USER': 'user_name',
         'PASSWORD': 'password',
     }
 }
